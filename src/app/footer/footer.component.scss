@@ -1,5 +1,91 @@
+@mixin shadow {
+  box-shadow: 0 0 15px 5px black;
+}@mixin button {
+  border: 1px solid green;
+  background: linear-gradient(to right, #5873d3, #8a49d1, #d901cf);
+  width: 7rem;
+  padding: 1rem 1rem;
+  border-radius: 100vw;
+  font-size: 1rem;
+  box-shadow: 0 0 2px #5873d3, 0 0 4px #8a49d1, 0 0 6px #d901cf;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
 .container {
-  height: 100%;
-  border: 1px solid orangered;
+  height: 100vh;
+  // border: 1px solid orangered;
   scroll-snap-align: start;
+  display: flex;
+  gap: 1rem;
+
+  .left,
+  .right {
+    width: 50rem;
+    // border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  // left section styling
+  .left {
+    .bigcard {
+      width: 20rem;
+      height: 20rem;
+      // border: 1px solid red;
+      border-radius: 0 9rem 0 0;
+      overflow: hidden;
+      @include shadow();
+    }
+    .smallcardswrapper {
+      // border: 1px solid red;
+      width: 20rem;
+      height: 30rem;
+
+      // global for all cmall card
+      .smallcard {
+        @include shadow();
+        height: 50%;
+        width: 80%;
+        // border: 1px solid green;
+      }
+      // children
+      .smallcard:nth-child(1) {
+        overflow: hidden;
+        width: 70%;
+        border-radius: 0 4rem 0 0;
+      }
+      .smallcard:nth-child(2) {
+        overflow: hidden;
+        border-radius: 4rem 0 0 0;
+      }
+    }
+  }
+
+
+// right section styling
+  .right {
+    flex-direction: column;
+    font-size: 2rem;
+    
+    .styletext {
+      background: linear-gradient(45deg, #5873d3, #8a49d1, #d901cf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  // play now wraper
+  .playwrap{
+    margin-block-start: 1rem;
+    // border: 1px solid red;
+    width: 100%;
+  }
+
+  button{
+    @include button();
+  }
 }
