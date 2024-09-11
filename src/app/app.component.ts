@@ -9,9 +9,15 @@ import { Child2Component } from './child2/child2.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, MainComponent,FooterComponent, Child2Component],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    MainComponent,
+    FooterComponent,
+    Child2Component,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'showcase';

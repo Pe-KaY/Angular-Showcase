@@ -36,6 +36,7 @@
       // border: 1px solid red;
       border-radius: 0 9rem 0 0;
       overflow: hidden;
+      animation: leftright 7s linear infinite alternate 1s;
       @include shadow();
     }
     .smallcardswrapper {
@@ -55,10 +56,12 @@
         overflow: hidden;
         width: 70%;
         border-radius: 0 4rem 0 0;
+        animation: topdown 5s linear infinite alternate .7s;
       }
       .smallcard:nth-child(2) {
         overflow: hidden;
         border-radius: 4rem 0 0 0;
+        animation: downtop 3s linear infinite alternate .9s;
       }
     }
   }
@@ -87,5 +90,36 @@
 
   button{
     @include button();
+  }
+}
+
+
+
+@keyframes leftright {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-5%);
+  }
+}
+
+@keyframes topdown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes downtop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(5%);
   }
 }

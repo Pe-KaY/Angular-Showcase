@@ -6,11 +6,14 @@
   padding: 0;
   user-select: none;
   line-height: calc(1em + 0.5rem);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
 }
 
 html {
   color-scheme: light dark;
 }
+
 
 img {
   max-width: 100%;

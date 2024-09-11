@@ -26,6 +26,16 @@
     //   margin-block-start: 4rem;
       position: absolute;
       bottom: 0;
+      img{
+        margin-block-end: -1rem;
+      animation: mimicwalking 1s linear infinite alternate;
+      }
+    }
+
+    h1{
+      position: absolute;
+      bottom: 0;
+      text-align: center;
     }
   }
 
@@ -43,4 +53,17 @@
       font-weight: bold;
     }
   }
+}
+
+
+// animations
+
+@keyframes mimicwalking {
+from {
+  transform: rotate(-2deg);
+}
+to {
+  transform: rotate(2deg);
+}
+
 }
