@@ -1,7 +1,66 @@
+@mixin darkMode{
+  background-color: white;
+  color: black;
+}
+
 .maincontainer {
   background-color: #0f0326;
+  // background-color: white;
   color: white;
   overflow-y: auto;
   height: 100vh;
   scroll-snap-type: y mandatory;
+
+  .toggle {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 100vw;
+    background-color: #0f0326;
+  }
+  .toggle.lightmode{
+    background-color: white;
+  }
+}
+
+// darkmode
+.maincontainer.darkmode {
+  @include darkMode();
+}
+
+
+// darkmode toggle styling
+.radiation {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.toggle::before,
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100vw;
+  border: 2px solid rgba(88, 115, 211, 0.7); /* Adjust color and transparency */
+  animation: radiation 2s infinite ease-out;
+}
+.toggle::after {
+  animation-delay: 1s;
+}
+
+@keyframes radiation {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
 }

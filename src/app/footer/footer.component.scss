@@ -1,6 +1,7 @@
 @mixin shadow {
   box-shadow: 0 0 15px 5px black;
-}@mixin button {
+}
+@mixin button {
   border: 1px solid green;
   background: linear-gradient(to right, #5873d3, #8a49d1, #d901cf);
   width: 7rem;
@@ -56,22 +57,21 @@
         overflow: hidden;
         width: 70%;
         border-radius: 0 4rem 0 0;
-        animation: topdown 5s linear infinite alternate .7s;
+        animation: topdown 5s linear infinite alternate 0.7s;
       }
       .smallcard:nth-child(2) {
         overflow: hidden;
         border-radius: 4rem 0 0 0;
-        animation: downtop 3s linear infinite alternate .9s;
+        animation: downtop 3s linear infinite alternate 0.9s;
       }
     }
   }
 
-
-// right section styling
+  // right section styling
   .right {
     flex-direction: column;
     font-size: 2rem;
-    
+
     .styletext {
       background: linear-gradient(45deg, #5873d3, #8a49d1, #d901cf);
       -webkit-background-clip: text;
@@ -82,18 +82,19 @@
   }
 
   // play now wraper
-  .playwrap{
+  .playwrap {
     margin-block-start: 1rem;
     // border: 1px solid red;
     width: 100%;
   }
 
-  button{
+  button {
     @include button();
+    &:hover {
+      box-shadow: 0 0 5px #5873d3, 0 07px #8a49d1, 0 0 8px #d901cf;
+    }
   }
 }
-
-
 
 @keyframes leftright {
   from {

@@ -21,4 +21,14 @@ import { Child2Component } from './child2/child2.component';
 })
 export class AppComponent {
   title = 'showcase';
+
+  darkMode = false;
+
+  toggleMode() {
+    this.darkMode = !this.darkMode;
+  }
+
 }
+
+
+// JEST AND MIXINS IMPORT
