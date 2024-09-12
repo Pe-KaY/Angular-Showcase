@@ -36,3 +36,43 @@
     height: 25rem;
   }
 }
+
+.first {
+  animation: topdown 5s infinite 1s ease-in-out alternate;
+}
+.second {
+  animation: topdown 8s infinite 2s ease-in-out alternate;
+}
+.third {
+  animation: topdown 10s infinite 3s ease-in-out alternate;
+}
+// Animations
+
+@keyframes leftright {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-5%);
+  }
+}
+
+@keyframes topdown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes downtop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
